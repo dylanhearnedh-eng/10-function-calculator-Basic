@@ -2,7 +2,7 @@
 
 #define 10 actions for the calculator to use
 def add (x , y): #1
-    answer = x + y #When doing Q3 i learned how to make f strings so i updated this question because i think they look better
+    answer = x + y 
     return (f'{x} + {y} = {answer}')
 def subtract (x , y): #2
     answer = x - y
