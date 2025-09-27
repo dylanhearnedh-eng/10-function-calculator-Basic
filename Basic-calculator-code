@@ -1,0 +1,66 @@
+#BASIC CALCULATOR
+
+#define 10 actions for the calculator to use
+def add (x , y): #1
+    answer = x + y #When doing Q3 i learned how to make f strings so i updated this question because i think they look better
+    return (f'{x} + {y} = {answer}')
+def subtract (x , y): #2
+    answer = x - y
+    return (f'{x} - {y} = {answer}')
+def multiply (x , y): #3
+    answer = x * y
+    return (f'{x} * {y} = {answer}')
+def divide (x , y): #4
+    answer = x / y
+    return (f'{x} / {y} = {answer}')
+def power (x , y): #5
+    answer = x ** y
+    return (f'{x} ** {y} = {answer}')
+def floor (x , y): #6
+    answer = x // y
+    return (f'{x} // {y} = {answer}')
+def modulus (x , y): #7
+    answer = x % y
+    return (f'{x} % {y} = {answer}')
+def equals (x , y): #8
+    answer = x == y
+    return (f'{x} == {y} is {answer}')
+def num1_greater_than_num2 (x , y): #9
+    answer = x > y
+    return (f'{x} > {y} is {answer}')
+def num1_less_than_num2 (x , y): #10
+    answer = x < y
+    return (f'{x} < {y} is {answer}')
+#now that the 10 options are defined they can be called upon easily
+def calc(): #This creates a calculator that will be used
+    print ('Welcome to my calculator')
+    print ('Please enter an operator and two numbers')
+    print ('operator list: +,-,*,/,**,//,%,==,>,<') #list of actions
+#if/else is used here to allow for many options, once the operator is defined the code moves down
+    operator = input('please enter an operator: ')
+    try: #once to code gets to here it selects the input that corresponds with the operator
+      if operator == '+':
+        print (add (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '-':
+        print (subtract (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '*':
+        print (multiply (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '/':
+        print (divide (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '**':
+        print (power (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '//':
+        print (floor (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '%':
+        print (modulus (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '==':
+        print (equals (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '>':
+        print (num1_greater_than_num2 (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      elif operator == '<':
+        print (num1_less_than_num2 (float(input('Please Enter Num1: ')),(float(input('Please Enter Num2: ')))))
+      else: #This is to prevent the user inputting anything other than the defined operators
+        print ('ERROR: Invalid Operator, please try again')
+    except ValueError: #This is to prevent anything other than numbers being used in the equation
+      print ('ERROR: Invalid Number, please try again')
+calc() #the result is shown below
